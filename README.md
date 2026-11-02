@@ -16,16 +16,23 @@ The result is a working real-time analytics prototype that demonstrates how oper
 ![Call Centre Analytics Dashboard](screenshots/call-centre-dashboard.png)
 ## Architecture
 
-```mermaid
 flowchart TD
-    A["Python Call Simulator"] --> B["SQL Server"]
-    A --> C["Apache Kafka - call-events"]
-    C --> D["Apache Flink"]
-    D --> E["Kafka KPI Output Topic"]
-    E --> F["Snowflake Sink Connector"]
-    F --> G["Snowflake Data Warehouse"]
-    G --> H["Power BI DirectQuery Dashboard"]
-```
+    A["Python Call Simulator"]
+    B[("SQL Server")]
+    C[["Kafka: call-events"]]
+    D["Apache Flink"]
+    E[["Kafka: call_centre_kpi_output"]]
+    F["Snowflake Sink Connector"]
+    G[("Snowflake Analytics Warehouse")]
+    H["Power BI DirectQuery Dashboard"]
+
+    A -->|"Operational records"| B
+    A -->|"Call events"| C
+    C --> D
+    D -->|"KPI snapshots"| E
+    E --> F
+    F --> G
+    G --> H
 
 ## Technology Stack
 
