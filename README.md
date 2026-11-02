@@ -14,8 +14,10 @@ The result is a working real-time analytics prototype that demonstrates how oper
 ## Dashboard Preview
 
 ![Call Centre Analytics Dashboard](screenshots/call-centre-dashboard.png)
+
 ## Architecture
 
+```mermaid
 flowchart TD
     A["Python Call Simulator"]
     B[("SQL Server")]
@@ -33,6 +35,8 @@ flowchart TD
     E --> F
     F --> G
     G --> H
+```
+
 
 ## Technology Stack
 
