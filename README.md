@@ -11,7 +11,9 @@ This project demonstrates an alternative approach using event-driven architectur
 A Python-based call simulator generates call centre events and sends them to both SQL Server and Apache Kafka. Apache Flink processes the incoming Kafka events and calculates operational KPIs. The aggregated results are streamed into Snowflake, where Power BI connects to the latest data using DirectQuery.
 
 The result is a working real-time analytics prototype that demonstrates how operational data can move from event generation to business intelligence.
+## Dashboard Preview
 
+![Call Centre Analytics Dashboard](screenshots/call-centre-dashboard.png)
 ## Architecture
 
 ```mermaid
